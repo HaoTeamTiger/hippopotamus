@@ -10,7 +10,7 @@
  *              未经书面许可,不得翻版,翻版必究;版权归属 HaoTeam Inc;
  */
 
-namespace HaoTeam\HmBuyer;
+namespace HaoTeam\HippoBuyer;
 
 /**
  * Description of Client
@@ -20,17 +20,18 @@ namespace HaoTeam\HmBuyer;
  */
 class Client {
 
-    protected $appid = '';
-    protected $appSecret = '';
+    protected $appid = '4506292583a5ea8a4463';
+    protected $appSecret = '6546b03fb5c14b78aac7a72f30971e402868fe04c82e9242e9881f9bea3eaf6d';
+    protected $serviceUrl = 'http://api.supply.net/?s=';
 
     /**
      * @author tiger <1192851302@qq.com>
      * @param string $appid
      * @param string $appSecret
      */
-    public function __construct(string $appid, string $appSecret) {
-        $this->appid = $appid;
-        $this->appSecret = $appSecret;
+    public function __construct(string $appid = null, string $appSecret = null) {
+        $this->appid = $appid ? $appid : $this->appid;
+        $this->appSecret = $appSecret ? $appSecret : $this->appSecret;
     }
 
     /**
@@ -76,7 +77,10 @@ class Client {
     public function request($url, $params) {
         [$path, $service, $method] = explode('.', $url);
         try {
-            $response = call_user_func_array(array(str_replace("{service}", ucfirst($service), "\HaoTeam\HmBuyer\Core\{service}Service"), strtolower($method)), $params);
+            $Service = str_replace("{service}", ucfirst($service), "\HaoTeam\HippoBuyer\Core\{service}Service");
+            $res = new $Service($this->serviceUrl);
+            $response = $res->{strtolower($method)}($params);
+            //$response = call_user_func_array(array(str_replace("{service}", ucfirst($service), "\HaoTeam\HmBuyer\Core\{service}Service"), strtolower($method)), $params);
         } catch (\Exception $exc) {
             throw new \Exception($exc->getMessage(), $exc->getCode());
         }

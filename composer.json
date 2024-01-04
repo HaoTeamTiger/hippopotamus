@@ -1,9 +1,9 @@
 {
-    "name": "haoteam/hm-buyer-php-sdk",
+    "name": "haoteam/hippo-buyer-php-sdk",
     "description": "hippopotamus buyer php sdk",
     "autoload": {
         "psr-4": {
-            "HaoTeam\\HmBuyer\\": "src/HaoTeam/HmBuyer/"
+            "HaoTeam\\HippoBuyer\\": "src/HaoTeam/HippoBuyer/"
         }
     },
     "authors": [

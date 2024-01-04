@@ -10,7 +10,7 @@
  *              未经书面许可,不得翻版,翻版必究;版权归属 HaoTeam Inc;
  */
 
-namespace HaoTeam\HmBuyer\Http;
+namespace HaoTeam\HippoBuyer\Http;
 
 use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\HandlerStack;
