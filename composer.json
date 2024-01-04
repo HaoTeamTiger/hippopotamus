@@ -1,0 +1,16 @@
+{
+    "name": "haoteam/hippopotamus",
+    "description": "河马聚合供应链",
+    "autoload": {
+        "psr-4": {
+            "Haoteam\\Hippopotamus\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HaoTeam Tiger",
+            "email": "1192851302@qq.com"
+        }
+    ],
+    "require": {}
+}
