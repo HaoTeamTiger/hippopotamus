@@ -22,7 +22,7 @@ class Client {
 
     protected $appid = '4506292583a5ea8a4463';
     protected $appSecret = '6546b03fb5c14b78aac7a72f30971e402868fe04c82e9242e9881f9bea3eaf6d';
-    protected $serviceUrl = 'http://api.supply.net/?s=';
+    protected $serviceUrl = 'http://api.supply.net/';
 
     /**
      * @author tiger <1192851302@qq.com>
@@ -78,8 +78,10 @@ class Client {
         [$path, $service, $method] = explode('.', $url);
         try {
             $Service = str_replace("{service}", ucfirst($service), "\HaoTeam\HippoBuyer\Core\{service}Service");
-            $res = new $Service($this->serviceUrl);
-            $response = $res->{strtolower($method)}($params);
+            $params['s'] = $url;
+            $params['appid'] = $this->appid;
+            $params['sign'] = $this->sign($params);
+            $response = (new $Service($this->serviceUrl))->{strtolower($method)}($params);
             //$response = call_user_func_array(array(str_replace("{service}", ucfirst($service), "\HaoTeam\HmBuyer\Core\{service}Service"), strtolower($method)), $params);
         } catch (\Exception $exc) {
             throw new \Exception($exc->getMessage(), $exc->getCode());

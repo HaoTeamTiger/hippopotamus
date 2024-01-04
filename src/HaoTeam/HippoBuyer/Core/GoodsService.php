@@ -34,6 +34,6 @@ class GoodsService {
     }
 
     public function list($options) {
-        return HttpService::instance()->post($this->serviceUrl . 'App.Goods.List', $options);
+        return HttpService::instance()->post($this->serviceUrl, $options);
     }
 }
