@@ -1,7 +1,7 @@
 # [河马聚合供应链](http://cd.hmgyl.com.cn/)   
 
 ## 开发文档
-[开发文档](http://api.hmgyl.com.cn/docs.php)。  
+专为PHPer准备的优雅而详细的开发文档，基本都能在文档找到你要的答案，请看:[开发文档](http://api.hmgyl.com.cn/docs.php)。  
 
 ## 快速安装
 
