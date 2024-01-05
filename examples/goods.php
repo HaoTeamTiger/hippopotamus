@@ -15,7 +15,8 @@ $appSecret = null;
 
 try {
     $Client = new Client($appKey, $appSecret);
-    $response = $Client->request('App.Goods.List', ['page' => 1, 'limit' => 20]);
+//    $response = $Client->request('App.Goods.List', ['page' => 1, 'limit' => 20]);
+    $response = $Client->request('App.Goods.Detail', ['id' => 2361]);
 } catch (\Exception $e) {
     var_dump($e->getMessage());
     var_dump("\r\n");

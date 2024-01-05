@@ -82,7 +82,6 @@ class Client {
             $params['appid'] = $this->appid;
             $params['sign'] = $this->sign($params);
             $response = (new $Service($this->serviceUrl))->{strtolower($method)}($params);
-            //$response = call_user_func_array(array(str_replace("{service}", ucfirst($service), "\HaoTeam\HmBuyer\Core\{service}Service"), strtolower($method)), $params);
         } catch (\Exception $exc) {
             throw new \Exception($exc->getMessage(), $exc->getCode());
         }

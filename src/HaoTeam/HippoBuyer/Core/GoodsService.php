@@ -33,25 +33,7 @@ class GoodsService {
         $this->serviceUrl = $serviceUrl;
     }
 
-    /**
-     * 商品列表
-     * @author tiger <1192851302@qq.com>
-     * @param type $options 参数数组
-     * <p>categoryId    类目ID</p>
-     * <p>keyword       关键字</p>
-     * <p>activityId    选品规划id数组 来源于taglist</p>
-     * <p>priceStart    价格区间开始</p>
-     * <p>priceEnd      价格区间结束</p>
-     * <p>shipInTime    发货时效</p>
-     * <p>isYjdf        是否一件代发</p>
-     * <p>isFreePostage 是否包邮</p>
-     * @return int pageIndex 页码
-     * @return int totalRecords 总条数
-     * @return int sizePerPage 每页大小
-     * @return array resultList 数据列表 
-     * @throws Exception
-     */
-    public function list($options) {
-        return HttpService::instance()->post($this->serviceUrl, $options);
+    public function __call($name, $arguments) {
+        return HttpService::instance()->post($this->serviceUrl, $arguments[0]);
     }
 }

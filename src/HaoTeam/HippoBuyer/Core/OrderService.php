@@ -12,6 +12,8 @@
 
 namespace HaoTeam\HippoBuyer\Core;
 
+use HaoTeam\HippoBuyer\Http\HttpService;
+
 /**
  * Description of OrderService
  *
@@ -19,5 +21,36 @@ namespace HaoTeam\HippoBuyer\Core;
  * @datetime 2024-1-4  14:41:39
  */
 class OrderService {
-    //put your code here
+
+    protected $serviceUrl = '';
+
+    /**
+     * 
+     * @author tiger <1192851302@qq.com>
+     * @param string $serviceUrl
+     */
+    public function __construct(string $serviceUrl) {
+        $this->serviceUrl = $serviceUrl;
+    }
+
+    /**
+     * 
+     * @author tiger <1192851302@qq.com>
+     * @param type $name
+     * @param type $arguments
+     * @return type
+     */
+    public function __call($name, $arguments) {
+        return HttpService::instance()->post($this->serviceUrl, $arguments[0]);
+    }
+
+    /**
+     * 上传
+     * @author tiger <1192851302@qq.com>
+     * @param type $options
+     * @return type
+     */
+    public function refund_upload_voucher($options) {
+        return HttpService::instance()->post($this->serviceUrl, $options);
+    }
 }
