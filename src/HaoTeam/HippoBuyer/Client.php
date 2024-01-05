@@ -20,9 +20,9 @@ namespace HaoTeam\HippoBuyer;
  */
 class Client {
 
-    protected $appid = '4506292583a5ea8a4463';
-    protected $appSecret = '6546b03fb5c14b78aac7a72f30971e402868fe04c82e9242e9881f9bea3eaf6d';
-    protected $serviceUrl = 'http://api.supply.net/';
+    protected $appid = '';
+    protected $appSecret = '';
+    protected $serviceUrl = 'http://api.hmgyl.com.cn/';
 
     /**
      * @author tiger <1192851302@qq.com>
