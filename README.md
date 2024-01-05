@@ -14,13 +14,6 @@ $ composer require haoteam/hippo-buyer-php-sdk
 ```
 > 温馨提示：关于composer的使用，请参考[Composer 中文网 / Packagist 中国全量镜像](http://www.phpcomposer.com/)。  
 
-### 手动下载安装
-
-或者，也可以进行手动安装。将此Git项目代码下载解压后，进行可选的composer更新，即：  
-```bash
-$ composer update
-```
-
 ## 使用
 
 ### 调用接口
