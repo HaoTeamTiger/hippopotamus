@@ -14,6 +14,6 @@
     ],
     "php": ">=5.5",
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "^6.2 || ^7.0"
     }
 }
